@@ -1,0 +1,22 @@
+<h1>Lambda Server</h1>
+<h2>Register Function</h2>
+<form action="/lambdas" method="POST">
+  <div class="form-group">
+    <label for="name">Function Name</label>
+    <input type="text" class="form-control" id="name" name="name">
+  </div>
+  <div class="form-group">
+    <label for="uri">GitHub HTTP URI</label>
+    <input type="url" class="form-control" id="uri" name="uri">
+  </div>
+  <button type="submit" class="btn btn-primary">Add Lambda Function</button>
+</form>
+<h2>Lambda Functions</h2>
+<div class="list-group">
+    {{#each lambdas}}
+        <div class="list-group-item list-group-item-action">
+            <h3>{{this.name}}</h3>
+            <p>{{this.runUri}}</p>
+        </div>
+    {{/each}}
+</div>
